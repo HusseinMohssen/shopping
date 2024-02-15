@@ -1,0 +1,43 @@
+:root {
+    --main-color: #0DCAF0;
+    --rating-color: red;
+    --shop-color: rgb(162, 0, 255);
+    --secondary-color: rgba(0, 255, 119, 0.078);
+    --font-family:'Encode Sans Expanded', sans-serif;
+}
+
+body {
+    font-family: var(--font-family) !important;
+    background-color: var(--main-color);
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.rating-color {
+    color: var(--rating-color);
+}
+
+.shop-color {
+    color: var(--shop-color);
+}
+
+.bg-color {
+    background-color: var(--secondary-color);
+}
+
+.cartIcon {
+    background-color: red;
+    color: white;
+    width: 50px !important;
+    height: 50px ;
+    border-radius: 50px;
+}
+
+img {
+    height: 400px;
+}
