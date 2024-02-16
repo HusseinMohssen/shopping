@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shope</title>
-    
+    <title>Signup</title>
+
     <!-- fontawesome -->
     <link rel="stylesheet" href="css/all.min.css">
     <!-- bootstrap css -->
@@ -12,21 +13,28 @@
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
-    <div class="w-50 m-auto bg-light">
-        <h2 class="text-main text-center my-5">Signup</h2>
 
-        <div class="rounded-2 my-5 p-5">
-            <input class="form-control my-3" type="text" name="F-name" id="userName" placeholder="Enter your Name">
+    <div class="bg-img d-flex justify-content-center align-content-center">
+        <div class="w-50 m-auto ">
+            <h2 class="text-main text-center fw-bolder">Signup</h2>
 
-            <input class="form-control my-3" type="email" name="email" id="userEmail" placeholder="Enter your Email">
+            <form class="login-form form-control rounded-3 px-4 py-4">
 
-            <input class="form-control my-3" type="password" name="password" id="userPass" placeholder="Create password">
-            
-            <button onclick="signUp()" class="btn btn-outline-info m-2 w-100">Signup</button>
-            <p class="text-center">Already have an account ? <a class=" text-decoration-none" href="index.html">Login</a></p>
-        
+                <input class="form-control my-3" type="text" id="userName" placeholder="Enter your Name">
+
+                <input class="form-control my-3" type="email" id="userEmail"
+                    placeholder="Enter your Email">
+
+                <input class="form-control my-3" type="password"  id="userPass"
+                    placeholder="Create password">
+
+                <button id="signBtn" onclick="register()" class="btn my-2 w-100 text-white btn-outline-danger">Signup</button>
+                <p class="my-2 text-center text-white">Already have an account ? <a
+                        class="text-color text-decoration-none" href="index.html">Login</a></p>
+
+            </form>
         </div>
     </div>
 
@@ -37,4 +45,5 @@
     <!-- main js -->
     <script src="js/index.js"></script>
 </body>
+
 </html>
