@@ -84,36 +84,3 @@ function isImpty() {
 //     }
 // }
 
-// logBtn.addEventListener("click", () => {
-//     if (!emailInput.value || !emailPass.value) {
-//         alertMsg("Please fill all data");
-//         return false;
-//     } else if (emailRegex.test(emailInput.value) == false) {
-//         {
-//             alertMsg("Please enter a valid email");
-//         }
-//     } else {
-//         if (JSON.parse(localStorage.getItem("users") == null)) {
-//             alertMsg("Please register");
-//         } else {
-//             for (var i = 0; i < users.length; i++) {
-//                 if (users[i].userEmail.includes(emailInput.value)) {
-//                     if (users[i].userEmail == emailInput.value) {
-//                         if (users[i].userPass == emailPass.value) {
-//                             sessionStorage.setItem("userLogin", users[i].userName);
-//                             window.open("Welcome.html", "_self");
-//                             return true;
-//                         } else {
-//                             alertMsg("Wrong Password!");
-//                             return false;
-//                         }
-//                     } else {
-//                         alertMsg("Wrong Email");
-//                     }
-//                 } else {
-//                     alertMsg("Your email is not exist!<br> Please register");
-//                 }
-//             }
-//         }
-//     }
-// });
