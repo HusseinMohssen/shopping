@@ -1,16 +1,15 @@
-
 :root {
     --main-color: #BB2D3B;
     --rating-color: red;
     --shop-color: rgb(208, 255, 0);
     --secondary-color: white;
-    --font-family:'Encode Sans Expanded', sans-serif;
+    --font-family: 'Encode Sans Expanded', sans-serif;
 }
 
 body {
     font-family: var(--font-family) !important;
-    /* background-color: var(--main-color); */
 }
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -22,13 +21,20 @@ body {
     background-size: cover;
 }
 
+.bg-img1 {
+    height: 100%;
+    background-image: url(../images/bg.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
 .login-form {
     background-color: inherit !important;
     border: 1px solid rgba(255, 255, 255, 0.314);
-    
+
 }
 
-.text-color  {
+.text-color {
     color: var(--main-color);
 }
 
@@ -71,7 +77,7 @@ input:focus {
     background-color: red;
     color: white;
     width: 50px !important;
-    height: 50px ;
+    height: 50px;
     border-radius: 50px;
 }
 

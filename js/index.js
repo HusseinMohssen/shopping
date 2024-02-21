@@ -1,86 +1,83 @@
-/// <reference types="../@types/jquery" />
+/// <reference types='../@types/jquery' />
 
-let userName = document.getElementById("userName");
-let userEmail = document.getElementById("userEmail");
-let userPass = document.getElementById("userPass");
-let signBtn = document.getElementById('signBtn');
+let userNameInput = document.getElementById('userName');
+let userEmailInput = document.getElementById('userEmail');
+let userPassInput = document.getElementById('userPass');
 
-let loginEmail = document.getElementById('loginEmail');
-let loginPassword = document.getElementById('loginPassword');
-let logBtn = document.getElementById('logBtn');
+let loginEmailInput = document.getElementById('loginEmail');
+let loginPasswordInput = document.getElementById('loginPassword');
 
+let loginMessage = document.getElementById('loginMessage')
 
 let allUsers = [];
 
-if (localStorage.getItem("allUsers") != null) {
-    allUsers = JSON.parse(localStorag.getItem("allUsers"))
-}
+if (localStorage.getItem('allUsers') != null) {
+    allUsers = JSON.parse(localStorage.getItem('allUsers'))
+};
 
-// signBtn.addEventListener("click", () => {
-//     let user = {
-//         name: userName.value.trim(),
-//         email: userEmail.value.trim(),
-//         password: userPass.value.trim(),
-//     };
-//     if (isImpty() == true) {
-//         allUsers.push(user);
-//         localStorage.setItem("users", JSON.stringify(allUsers));
-//         window.alert("Registered Successfully");
-//         // window.open("index.html", "_self");
-//     } else {
-//         window.alert('Please Enter Data')
-//     }
-// });
 
-function register(){
+function register() {
     let user = {
-        name: userName.value,
-        email: userEmail.value,
-        password: userPass.value,
+        name: userNameInput.value,
+        email: userEmailInput.value,
+        password: userPassInput.value,
     };
-    if (isImpty() == true && isExite()==false) {
+    if (isImpty()) {
         allUsers.push(user);
-        localStorage.setItem("allUsers", JSON.stringify(allUsers));
-        window.alert("Registered Successfully");
-        // window.open("index.html", "_self");
+        localStorage.setItem('allUsers', JSON.stringify(allUsers));
+        alert('Registered Successfully');
+        window.location = 'index.html';
     } else {
-        window.alert('Please Enter Data')
+        alert('Please Enter Data')
+    }
+};
+
+function isImpty() {
+    if (userNameInput.value == '' || userEmailInput.value == '' || userPassInput == '') {
+        return false;
+    } else {
+        return true;
+    }
+};
+
+function login() {
+    if (isValid() == true) {
+
+        window.location = 'home.html';
+
+    } else {
+        alert('Please Enter Valid Data')
     }
 }
 
-function isExite(){
-    for(var i = 0 ; i < allUsers.length ; i++){
-        if(allUsers[i].name.toLowerCase() == userName.value.toLowerCase() ||
-        allUsers[i].email.toLowerCase() == userEmail.value.toLowerCase()
-        ){
+let userNameSession = JSON.parse(localStorage.getItem('userName'))
+
+function isValid() {
+    for (let i = 0; i < allUsers.length; i++) {
+        if (allUsers[i].email.toLowerCase() == loginEmailInput.value.toLowerCase() &&
+            allUsers[i].password.toLowerCase() == loginPasswordInput.value.toLowerCase()) {
+            userNameSession = allUsers[i].name;
+            localStorage.setItem('userName', JSON.stringify(userNameSession));
             return true
         }
     }
-    return false
+};
+
+function displayWelcomeUser() {
+    loginMessage.innerHTML = `hello ${userNameSession}`
 }
 
-function isImpty() {
-    if (userName.value == "" || userEmail.value == "" || userPass == "") {
-        return false
-    } else {
-        return true
-    }
+function logOut() {
+    localStorage.removeItem('userName')
 }
 
-// logBtn.addEventListener('click', () => {
-// if(isValid()== true){
-// window.open('home.html')
-// }else{
-//     window.alert("Please Enter Valid Data")
-// }
-// })
 
-// function isValid() {
-//     if (userEmail.value == loginEmail.value && userPass.value == loginPassword) {
-//         return true
-//     }  {
-//         return false
+let counter = 0;
 
-//     }
-// }
+const counterElement = document.getElementById('counter');
+
+function addItem(){
+    counter++;
+    counterElement.textContent = counter;
+}
 

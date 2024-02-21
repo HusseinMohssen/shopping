@@ -20,19 +20,19 @@
         <div class="w-50 m-auto ">
             <h2 class="text-main text-center fw-bolder">Login</h2>
 
-            <form class="login-form form-control rounded-3 px-4 py-4">
+            <div class="login-form form-control rounded-3 px-4 py-4">
 
-                <input class="form-control my-3" type="text" name="F-name" id="loginEmail"
-                    placeholder="Enter your Email">
+                <input class="form-control my-3" type="email" id="loginEmail" placeholder="Enter your Email">
 
-                <input class="form-control my-3" type="password" name="password" id="loginPassword"
-                    placeholder="Enter your password">
+                <input class="form-control my-3" type="password" id="loginPassword" placeholder="Enter your password">
 
-                <button id="logBtn" class="btn my-2 w-100 text-white btn-outline-danger">Login</button>
-                <p class="my-2 text-center text-white">Don't have an account ? <a
-                        class="text-color text-decoration-none" href="signup.html">Register</a></p>
+                <button onclick="login()" class="btn my-2 w-100 text-white btn-outline-danger">Login</button>
+                <p class="my-2 text-center text-white">
+                    Don't have an account ?
+                    <a class="text-color text-decoration-none" href="signup.html">Register</a>
+                </p>
 
-            </form>
+            </div>
         </div>
     </div>
 
